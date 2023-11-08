@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+
+char separador[40] = "========================================";
+
 /*
-    Structs. Structs, também conhecidas como Registros, 
+    Structs. Structs, também conhecidas como Registros,
     definem tipos de dados que agrupam variáveis sob um mesmo tipo de dado
 */
 struct Personagem
@@ -22,7 +25,6 @@ int receberIdadeEValidar()
     return (idade < 18 || idade > 100) ? receberIdadeEValidar() : idade;
 }
 
-
 struct Personagem criarPersonagem()
 {
     struct Personagem personagem;
@@ -30,31 +32,29 @@ struct Personagem criarPersonagem()
 
     int idade;
 
-    printf("\nVamos criar seu personagem?\nDigite aqui o nome do seu Personagem:");
+    printf("%s\nVamos criar seu personagem?\nDigite aqui o nome do seu Personagem:\n", separador);
     scanf("%s", &nome);
 
     idade = receberIdadeEValidar();
 
     printf("Ok, %s, sua idade é: %d", nome, idade);
 
-    // Função strcpy copia o valor da 
+    // Função strcpy copia o valor da
     // string na segunda posição do argumento para uma variável string na primeira posição
-    
-    
+
     strcpy(personagem.nome, nome);
     personagem.idade = idade;
 
-
-    printf("As espeficicações do seu personagem é:\nnome:%s\nidade:%d",personagem.nome, personagem.idade);
+    printf("As espeficicações do seu personagem é:\nnome:%s\nidade:%d",
+           personagem.nome,
+           personagem.idade);
 
     return personagem;
-
 }
 
 void iniciarJogo()
 {
-    printf("Iniciando o jogo....\n");
-
+    printf("\nIniciando o jogo....\n");
     criarPersonagem();
 }
 
@@ -71,7 +71,7 @@ void inicializarJogo()
 
     char gameStartOption;
 
-    printf("============================================\nVoce deseja iniciar o jogo?\n[1] Iniciar jogo\n[2] Finalizar Jogo\n============================================\n");
+    printf("%s\nVoce deseja iniciar o jogo?\n[1] Iniciar jogo\n[2] Finalizar Jogo\n%s\n", separador, separador);
     scanf("%c", &gameStartOption);
 
     switch (gameStartOption)
