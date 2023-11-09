@@ -1,1 +1,1 @@
-finalizedGame();
+#include <string.h>
