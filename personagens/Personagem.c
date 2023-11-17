@@ -10,7 +10,7 @@ struct Personagem criarPersonagem()
 
     int idade;
     char *nome;
-    printf("\nVamos definir as habilidades do seu personagem\nLevaremos em consideração aspectos fisicos e também intelectuais para formação das habilidades...\n");
+    printf("\nVamos definir as caracteristicas do seu personagem...\n");
 
     nome = definirNome();
     idade = receberIdadeEValidar();
